@@ -16,6 +16,7 @@ import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit
 import { from } from 'rxjs';
 import { ContactComponent } from './contact/contact.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     RecipeItemComponent,
     ShoppingListComponent,
     HeaderComponent, 
-    ShoppingEditComponent, ContactComponent, SignupFormComponent
+    ShoppingEditComponent, ContactComponent, SignupFormComponent, RegistrationComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule

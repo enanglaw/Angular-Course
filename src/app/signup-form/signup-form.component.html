@@ -1,7 +1,7 @@
 
 
 <div class="row">
-<div class="col-md-7">
+<div class="col-md-5">
     <form  [formGroup]="form">
         <div class="form-group">
             <label for="username">User Name :</label>
@@ -11,20 +11,24 @@
             class="form-control" 
             type="text" 
             placeholder="user name">
-            <div *ngIf="form.get('username').touched && form.get('username').invalid" class="alert alert-danger">
-                user name is required
+            <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+               <div *ngIf="username.errors.required"> user name is required</div>
+               <div *ngIf="username.errors.minlength">Minimum length of {{username.errors.minlength.requiredLength}} characters required</div>
+               <div *ngIf="username.errors.cannotContainSpace">User name must not contain space </div>
             </div>
         </div>
         <div class="form-group">
-            <label for="password">User Name :</label>
+            <label for="password">Password :</label>
             <input 
             formControlName="password"
             id="password" 
             class="form-control" 
             type="password" 
             placeholder="Password">
-            <div *ngIf="form.get('password').touched && form.get('password').invalid"  class="alert alert-danger">
-               Password is required
+            <div *ngIf="password.touched && password.invalid"  class="alert alert-danger">
+              <div *ngIf="password.errors.required"> Password is required</div>
+              <div *ngIf="password.errors.minlength"> Minimum length of {{password.errors.minlength.requiredLength}} characters required</div>
+              
             </div>
         </div>
 
@@ -32,7 +36,7 @@
             <input type="checkbox" class="form-check-input" id="remindme">
             <label class="form-check-label" for="remindme"> Remind me !</label>
           </div>
-          <button type="submit"  class="btn btn-success">Submit</button>
+          <button type="submit"  class="btn btn-success">Sign up</button>
     </form>
 </div>
 </div>
